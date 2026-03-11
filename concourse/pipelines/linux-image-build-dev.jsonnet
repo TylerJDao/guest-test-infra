@@ -482,8 +482,6 @@ local imggroup = {
     'rhel-9-6-eus-lvm',
     'rhel-9-6-eus-lvm-arm64',
     'rhel-10',
-    'rhel-10-0-sap',
-    'rhel-10-0-sap-byos',
     'rhel-10-0-eus-lvm',
     'rhel-10-0-eus-lvm-arm64'
     ],
