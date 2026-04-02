@@ -477,7 +477,15 @@ local imggroup = {
 
 {
   local rhel_images = [
-    'rhel-10'
+    'rhel-10',
+    'rhel-10-2-beta',
+    'rhel-10-2-beta-arm64',
+    'rhel-10-2-beta-byos',
+    'rhel-10-2-beta-byos-arm64',
+    'rhel-10-2-beta-lvm',
+    'rhel-10-2-beta-lvm-arm64',
+    'rhel-10-2-beta-lvm-byos',
+    'rhel-10-2-beta-lvm-byos-arm64',
     ],
 
   // Start of output.
