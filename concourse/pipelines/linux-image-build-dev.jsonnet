@@ -482,11 +482,31 @@ local imggroup = {
 
 {
   local rhel_images = [
+    'rhel-9-8-sap',
+    'rhel-9-8-sap-byos',
+    'rhel-9-8-eus',
+    'rhel-9-8-eus-arm64',
+    'rhel-9-8-eus-byos',
+    'rhel-9-8-eus-byos-arm64',
+    'rhel-9-8-eus-lvm',
+    'rhel-9-8-eus-lvm-byos',
+    'rhel-9-8-eus-lvm-arm64',
+    'rhel-9-8-eus-lvm-byos-arm64',
     'rhel-10-gvnic-baremetal',
     'rhel-10-gvnic-baremetal-byos',
     'rhel-10-lvm-gvnic-baremetal',
     'rhel-10-lvm-gvnic-baremetal-byos',
     'rhel-10-2-beta',
+    'rhel-10-2-sap',
+    'rhel-10-2-sap-byos',
+    'rhel-10-2-eus',
+    'rhel-10-2-eus-arm64',
+    'rhel-10-2-eus-byos',
+    'rhel-10-2-eus-byos-arm64',
+    'rhel-10-2-eus-lvm',
+    'rhel-10-2-eus-lvm-byos',
+    'rhel-10-2-eus-lvm-arm64',
+    'rhel-10-2-eus-lvm-byos-arm64',
     ],
 
   // Start of output.
