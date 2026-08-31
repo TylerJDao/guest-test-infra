@@ -37,17 +37,11 @@ local prepublishtesttask = common.imagetesttask {
 local imgbuildjob = {
   local tl = self,
 
-  use_dynamic_template:: false,
-
   image:: error 'must set image in imgbuildjob',
   image_prefix:: self.image,
   zone:: get_zone(self.image),
   workflow_dir:: error 'must set workflow_dir in imgbuildjob',
-  workflow::
-    if tl.use_dynamic_template then
-      '%s/rhel_%s_consolidated.wf.json' % [tl.workflow_dir, tl.major_release]
-    else
-      '%s/%s.wf.json' % [tl.workflow_dir, underscore(tl.image)],
+  workflow:: '%s/rhel_%s_consolidated.wf.json' % [tl.workflow_dir, tl.major_release],
   build_task:: imgbuildtask {
     workflow: tl.workflow,
     zone: tl.zone,
@@ -224,7 +218,6 @@ local rhelimgbuildjob = imgbuildjob {
   is_lvm:: std.member(tl.image, '-lvm'),
   is_oot_driver:: std.member(tl.image, '-gvnic-baremetal'),
   is_sap:: std.member(tl.image, '-sap'),
-  use_dynamic_template:: true,
 
   local arch = if tl.is_arm then 'aarch64' else 'x86_64',
   local el_release_components = std.split(trim_strings(tl.isopath, ['-arm64']), '-'),
