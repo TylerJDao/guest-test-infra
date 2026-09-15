@@ -351,10 +351,11 @@ local imgpublishjob = {
   trigger:: if tl.env == 'testing' then true
   else false,
 
-  citfilter:: common.default_linux_image_build_cit_filter,
+  local oot_gve_linux_image_build_cit_filter = '^(loadbalancer|guestagent|hostnamevalidation|lvmvalidation|licensevalidation|network|rhel|security|hotattach|lssd|packagevalidation|ssh|metadata|mdsmtls|mdsroutes|packagemanager|pluginmanager|compatmanager)$',
+  citfilter:: if is_oot_gve(self.image) then oot_gve_linux_image_build_cit_filter else common.default_linux_image_build_cit_filter,
   cit_extra_args:: ['-timeout=30m', '-parallel_count=20'] + 
                   (if is_oot_gve(self.image) then 
-                    ['-x86_shape=u4s-standard-4'] 
+                    ['-x86_shape=u4c-standard-120-metal'] 
                   else 
                     ['-arm64_shape=c4a-standard-1']),
   local test_projects_arr = std.split(common.default_cit_test_projects, ','),
